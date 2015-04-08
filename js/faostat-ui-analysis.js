@@ -34,6 +34,8 @@ define(['jquery',
         /* Store FAOSTAT language. */
         this.CONFIG.lang_faostat = Commons.iso2faostat(this.CONFIG.lang);
 
+        console.log(this.CONFIG);
+
     };
 
     return ANALYSIS;

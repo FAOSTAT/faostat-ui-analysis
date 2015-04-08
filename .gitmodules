@@ -1,3 +1,6 @@
 [submodule "submodules/faostat-ui-analysis-ghg-overview"]
 	path = submodules/faostat-ui-analysis-ghg-overview
 	url = https://github.com/FAOSTAT4/faostat-ui-analysis-ghg-overview.git
+[submodule "submodules/faostat-ui-analysis-ghg-qaqc"]
+	path = submodules/faostat-ui-analysis-ghg-qaqc
+	url = https://github.com/FAOSTAT4/faostat-ui-analysis-ghg-qaqc.git

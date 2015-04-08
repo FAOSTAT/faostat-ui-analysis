@@ -7,3 +7,6 @@
 [submodule "submodules/faostat-ui-analysis-ghg-indicators"]
 	path = submodules/faostat-ui-analysis-ghg-indicators
 	url = https://github.com/FAOSTAT4/faostat-ui-analysis-ghg-indicators.git
+[submodule "submodules/fenix-ui-tiles-manager"]
+	path = submodules/fenix-ui-tiles-manager
+	url = https://github.com/FENIX-Platform/fenix-ui-tiles-manager.git

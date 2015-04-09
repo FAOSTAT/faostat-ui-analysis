@@ -14,11 +14,12 @@ define(['jquery',
         this.CONFIG = {
             lang: 'en',
             group: null,
-            domain: null,
+            section: null,
+            module: null,
             lang_faostat: 'E',
             datasource: 'faostatdb',
-            prefix: 'faostat_ui_download_',
-            placeholder_id: 'faostat_ui_download'
+            prefix: 'faostat_ui_analysis_',
+            placeholder_id: 'faostat_ui_analysis'
         };
 
     }
@@ -34,7 +35,19 @@ define(['jquery',
         /* Store FAOSTAT language. */
         this.CONFIG.lang_faostat = Commons.iso2faostat(this.CONFIG.lang);
 
-        console.log(this.CONFIG);
+        /* This... */
+        var _this = this;
+
+        require(['FENIX_UI_TILES_MANAGER'], function (TILES_MANAGER) {
+            var mgr = new TILES_MANAGER();
+            mgr.init({
+                lang: _this.CONFIG.lang,
+                module: _this.CONFIG.module,
+                section: _this.CONFIG.section,
+                datasource: _this.CONFIG.datasource,
+                placeholder_id: _this.CONFIG.placeholder_id
+            });
+        });
 
     };
 

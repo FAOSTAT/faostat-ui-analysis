@@ -46,13 +46,15 @@ define(['jquery',
             mgr.init({
                 lang: _this.CONFIG.lang,
                 module: _this.CONFIG.module,
-                section: _this.CONFIG.section,
                 datasource: _this.CONFIG.datasource,
-                placeholder_id: _this.CONFIG.placeholder_id
+                placeholder_id: _this.CONFIG.placeholder_id,
+                section: _this.CONFIG.section != null ? _this.CONFIG.section : 'statistical_analysis'
             });
 
-            /* Enhance buttons. */
+            /* Iterate over buttons. */
             for (var i = 0 ; i < mgr.CONFIG.tile_ids.length ; i++) {
+
+                /* Enhance button. */
                 var tile = mgr.CONFIG.tile_ids[i];
                 $('#' + tile.button_id).click(tile, function(e) {
                     require([e.data.require_module], function (MODULE) {
@@ -63,6 +65,7 @@ define(['jquery',
                         });
                     });
                 });
+
             }
 
         });

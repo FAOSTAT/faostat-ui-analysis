@@ -38,7 +38,10 @@ define(['jquery',
         /* This... */
         var _this = this;
 
+        /* Load tiles manager. */
         require(['FENIX_UI_TILES_MANAGER'], function (TILES_MANAGER) {
+
+            /* Load tiles manager. */
             var mgr = new TILES_MANAGER();
             mgr.init({
                 lang: _this.CONFIG.lang,
@@ -47,6 +50,21 @@ define(['jquery',
                 datasource: _this.CONFIG.datasource,
                 placeholder_id: _this.CONFIG.placeholder_id
             });
+
+            /* Enhance buttons. */
+            for (var i = 0 ; i < mgr.CONFIG.tile_ids.length ; i++) {
+                var tile = mgr.CONFIG.tile_ids[i];
+                $('#' + tile.button_id).click(tile, function(e) {
+                    require([e.data.require_module], function (MODULE) {
+                        var mod = new MODULE();
+                        mod.init({
+                            lang: _this.CONFIG.lang,
+                            placeholder_id: _this.CONFIG.placeholder_id
+                        });
+                    });
+                });
+            }
+
         });
 
     };

@@ -51,6 +51,11 @@ define(['jquery',
                 section: _this.CONFIG.section != null ? _this.CONFIG.section : 'statistical_analysis'
             });
 
+            /* Bind section click. */
+            mgr.onAccordionSectionClick(function(section) {
+                Backbone.history.navigate('/' + _this.CONFIG.lang + '/analysis/' + section, {trigger: true});
+            });
+
             /* Bind tile click. */
             mgr.onTileClick(function(section, module) {
                 Backbone.history.navigate('/' + _this.CONFIG.lang +

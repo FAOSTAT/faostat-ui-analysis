@@ -51,22 +51,12 @@ define(['jquery',
                 section: _this.CONFIG.section != null ? _this.CONFIG.section : 'statistical_analysis'
             });
 
-            /* Iterate over buttons. */
-            for (var i = 0 ; i < mgr.CONFIG.tile_ids.length ; i++) {
-
-                /* Enhance button. */
-                var tile = mgr.CONFIG.tile_ids[i];
-                $('#' + tile.button_id).click(tile, function(e) {
-                    require([e.data.require_module], function (MODULE) {
-                        var mod = new MODULE();
-                        mod.init({
-                            lang: _this.CONFIG.lang,
-                            placeholder_id: _this.CONFIG.placeholder_id
-                        });
-                    });
-                });
-
-            }
+            /* Bind tile click. */
+            mgr.onTileClick(function(section, module) {
+                Backbone.history.navigate('/' + _this.CONFIG.lang +
+                                          '/analysis/' + section +
+                                          '/' + module, {trigger: true});
+            });
 
         });
 

@@ -10,3 +10,6 @@
 [submodule "submodules/fenix-ui-tiles-manager"]
 	path = submodules/fenix-ui-tiles-manager
 	url = https://github.com/FENIX-Platform/fenix-ui-tiles-manager.git
+[submodule "submodules/faostat-ui-wide-tables"]
+	path = submodules/faostat-ui-wide-tables
+	url = https://github.com/FAOSTAT4/faostat-ui-wide-tables.git
